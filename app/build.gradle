@@ -133,4 +133,6 @@ dependencies {
     implementation "androidx.work:work-multiprocess:$work_version"
     implementation "androidx.compose.runtime:runtime-livedata:1.4.0"
 
+    implementation "io.coil-kt:coil-compose:2.2.2"
+
 }
