@@ -15,10 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -31,6 +28,15 @@ import com.example.billysweatherapp.features.shortWaveRaditaionFeature.domain.mo
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.RadiationMainScreen
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.RainMainScreen
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.TempMainScreen
+
+fun sfd():Float{
+    {
+        if (horizontalState.currentPage == movies[page].index && !justOpenedApp) {
+            1f
+        } else 0f
+    }}
+    return 0f}
+
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @OptIn(ExperimentalFoundationApi::class)
@@ -68,9 +74,7 @@ fun horizontalPager(
 
 
         val animateVal = animateFloatAsState(
-            targetValue = targetval ,/*if (horizontalState.currentPage == movies[page].index && !justOpenedApp ) {
-                1f
-            } else 0f,*/
+            targetValue = sfd(),
             animationSpec = tween(5000),
             finishedListener = {justOpenedApp = false}
         )
