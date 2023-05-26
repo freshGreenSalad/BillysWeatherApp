@@ -4,9 +4,7 @@ import android.graphics.RenderEffect
 import android.graphics.Shader
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -28,15 +26,6 @@ import com.example.billysweatherapp.features.shortWaveRaditaionFeature.domain.mo
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.RadiationMainScreen
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.RainMainScreen
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.TempMainScreen
-
-/*fun sfd():Float{
-    {
-        if ( && !justOpenedApp) {
-            1f
-        } else 0f
-    }}
-    return 0f}*/
-
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @OptIn(ExperimentalFoundationApi::class)
@@ -60,23 +49,9 @@ fun horizontalPager(
         beyondBoundsPageCount = 9,
     ) { page ->
 
-        var justOpenedApp = true
-
-        var targetval = 0f
-
-        LaunchedEffect(key1 = true){
-            if (horizontalState.currentPage == movies[page].index ){
-                targetval = 1f
-            } else {
-                0f
-            }
-        }
-
-
         val animateVal = animateFloatAsState(
             targetValue = if (horizontalState.currentPage == movies[page].index){1f}else{0f},
             animationSpec = tween(5000),
-            finishedListener = {justOpenedApp = false}
         )
 
         Box(

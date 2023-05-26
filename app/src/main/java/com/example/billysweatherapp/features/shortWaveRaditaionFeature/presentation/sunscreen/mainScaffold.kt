@@ -44,13 +44,13 @@ fun weatherPager(
     )
 
     val scaffoldState = rememberBottomSheetScaffoldState()
-    val snackbarState = remember{ SnackbarHostState()}
+    val snackbarState = remember { SnackbarHostState() }
 
     BottomSheetScaffold(
         scaffoldState = scaffoldState,
         sheetPeekHeight = 80.dp,
         sheetContent = { sheetContent(movies) },
-        snackbarHost = {SnackbarHost(hostState = snackbarState)}
+        snackbarHost = { SnackbarHost(hostState = snackbarState) }
     ) { innerPadding ->
         Box(
             Modifier
@@ -58,34 +58,21 @@ fun weatherPager(
                 .padding(innerPadding)
         ) {
             val horizontalState = rememberPagerState(initialPage = 0)
-        //    LaunchedEffect(key1 = true) {
-        //        snackbarState.showSnackbar("swipe left to see your other weather metrics")
-        //    }
+            //    LaunchedEffect(key1 = true) {
+            //        snackbarState.showSnackbar("swipe left to see your other weather metrics")
+            //    }
             Column {
-                title()
-                Divider(Modifier.height(1.dp))
-                horizontalPager(horizontalState, Modifier.weight(0.8F),
+                horizontalPager(
+                    horizontalState, Modifier.weight(0.8F),
                     radiation = viewModel.radiation,
                     rain = viewModel.rain,
-                    temp =  viewModel.temp, movies)
+                    temp = viewModel.temp, movies
+                )
                 Divider(Modifier.height(1.dp))
-                verticanamepager(horizontalState, movies,Modifier.weight(0.1F))
+                verticanamepager(horizontalState, movies, Modifier.weight(0.1F))
             }
         }
     }
-}
-
-@Composable
-fun title() {
-    Text(
-        modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 8.dp),
-        text = "Billys weather App",
-        style = MaterialTheme.typography.headlineMedium.copy(
-            fontWeight = FontWeight.W300,
-            fontSize = 28.sp,
-        )
-    )
 }
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
