@@ -1,3 +1,3 @@
 /build
 .apikey.kt
-/apiKeys
+/src/main/java/com/example/billysweatherapp/common/domain

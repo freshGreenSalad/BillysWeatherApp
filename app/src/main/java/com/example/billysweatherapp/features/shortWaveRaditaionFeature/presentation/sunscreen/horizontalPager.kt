@@ -29,13 +29,13 @@ import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentat
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.RainMainScreen
 import com.example.billysweatherapp.features.shortWaveRaditaionFeature.presentation.sunscreen.individualWeatherComposables.TempMainScreen
 
-fun sfd():Float{
+/*fun sfd():Float{
     {
-        if (horizontalState.currentPage == movies[page].index && !justOpenedApp) {
+        if ( && !justOpenedApp) {
             1f
         } else 0f
     }}
-    return 0f}
+    return 0f}*/
 
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -74,7 +74,7 @@ fun horizontalPager(
 
 
         val animateVal = animateFloatAsState(
-            targetValue = sfd(),
+            targetValue = if (horizontalState.currentPage == movies[page].index){1f}else{0f},
             animationSpec = tween(5000),
             finishedListener = {justOpenedApp = false}
         )

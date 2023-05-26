@@ -1,7 +1,7 @@
 package com.example.billysweatherapp.common.data
 
 import com.example.billysweatherapp.common.domain.HttpConstants
-import com.example.billysweatherapp.common.domain.apikey
+import com.example.billysweatherapp.common.domain.apiKeys.apikey
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
