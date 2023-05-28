@@ -1,4 +1,4 @@
-package com.example.billysweatherapp.common.presentation.theme
+package com.example.billysweatherapp.theme
 
 import androidx.compose.ui.graphics.Color
 
